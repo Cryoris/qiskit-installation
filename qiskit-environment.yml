@@ -1,0 +1,22 @@
+# put the name of your conda environment here
+name: qiskit-dev
+channels:
+dependencies:
+   - python=3.7  # with Python 3.8 the installation of PySCF makes problems
+   - numpy
+   - pip
+   - pip:
+     # to use an element from a different GitHub repo (maybe your own), or a special 
+     # branch, adapt the following lines as 
+     #  "--editable=git+<https link to repo>@<branch or commit SHA>#egg=qiskit-<element>"
+     # for instance for the master branch of another repo
+     #  "--editable=git+https://github.com/myGitName/qiskit-my-aqua.git#egg=qiskit-aqua"
+     # and for a certain branch called 'dev'
+     #  "--editable=git+https://github.com/myGitName/qiskit-my-aqua.git@dev#egg=qiskit-aqua"
+     # 
+     # note: don't change the order of this list!
+     - "--editable=git+https://github.com/Qiskit/qiskit-terra.git#egg=qiskit-terra"
+     - "--editable=git+https://github.com/Qiskit/qiskit-aer.git#egg=qiskit-aer"
+     - "--editable=git+https://github.com/Qiskit/qiskit-ignis.git#egg=qiskit-ignis"
+     - "--editable=git+https://github.com/Qiskit/qiskit-aqua.git#egg=qiskit-aqua"
+     - "--editable=git+https://github.com/Qiskit/qiskit-ibmq-provider.git#egg=qiskit-ibmq-provider"
